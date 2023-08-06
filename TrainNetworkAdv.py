@@ -1,5 +1,5 @@
 from keras.models import Sequential
-from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout
+from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout,BatchNormalization
 from keras.optimizers import Adam
 from keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras import regularizers
@@ -46,38 +46,22 @@ def count_png_images(folder_path):
 
     return png_count
 
-def getSimpleModel(image_width, image_height):
-
-  model = Sequential()
-
-  model.add(Conv2D(32, (3, 3), activation='relu', input_shape=(image_width, image_height, 1)))
-  model.add(MaxPooling2D((2, 2)))
-  model.add(Conv2D(64, (3, 3), activation='relu'))
-  model.add(MaxPooling2D((2, 2)))
-
-  # Add the remaining layers as needed for your task
-  model.add(Flatten())
-  model.add(Dense(128, activation='relu'))
-  model.add(Dense(1, activation='sigmoid'))
-  return model
-
-
 def getSimpleModelDropOut(image_width, image_height):
 
     model = Sequential()
 
     model.add(Conv2D(32, (3, 3), activation='relu', input_shape=(image_width, image_height, 1)))
     model.add(MaxPooling2D((2, 2)))
-    BatchNormalization(),
+    BatchNormalization()
 
     model.add(Conv2D(64, (3, 3), activation='relu'))
     model.add(MaxPooling2D((2, 2)))
-    BatchNormalization(),
+    BatchNormalization()
 
     # Add Dropout with 20% rate
     model.add(Flatten())
     model.add(Dense(128, activation='relu'))
-    model.add(Dropout(0.2))  # Add 20% Dropout
+    model.add(Dropout(0.1))  # Add 10% Dropout
     model.add(Dense(1, activation='sigmoid', kernel_regularizer=regularizers.l2(0.01)))  # Add L2 regularization
 
     return model
@@ -97,7 +81,7 @@ nonface_train_path = os.path.join(train_path,'non-face')
 negative_folder = nonface_train_path
 positive_folder = face_train_path
 
-model=getSimpleModel(image_width,image_height)
+model=getSimpleModelDropOut(image_width,image_height)
 model.summary()
 
 # Reduce the learning rate of Adam optimizer to 0.0001
