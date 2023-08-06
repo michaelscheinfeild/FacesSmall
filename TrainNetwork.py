@@ -64,8 +64,8 @@ def plot_history(history):
   plt.legend()
   plt.savefig('accuracy.png')
 
-train_path ='D:\\Downloads\\faces\\Imagespng\\train'
-model_path='D:\\code2018\\model'
+train_path ='faces\\Imagespng\\train'
+model_path='model'
 
 face_train_path = os.path.join(train_path,'face')
 nonface_train_path = os.path.join(train_path,'non-face')
