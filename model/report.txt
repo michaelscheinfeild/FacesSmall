@@ -1,0 +1,96 @@
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d (Conv2D)             (None, 17, 17, 32)        320       
+                                                                 
+ max_pooling2d (MaxPooling2  (None, 8, 8, 32)          0         
+ D)                                                              
+                                                                 
+ conv2d_1 (Conv2D)           (None, 6, 6, 64)          18496     
+                                                                 
+ max_pooling2d_1 (MaxPoolin  (None, 3, 3, 64)          0         
+ g2D)                                                            
+                                                                 
+ flatten (Flatten)           (None, 576)               0         
+                                                                 
+ dense (Dense)               (None, 128)               73856     
+                                                                 
+ dense_1 (Dense)             (None, 1)                 129       
+                                                                 
+=================================================================
+Total params: 92801 (362.50 KB)
+Trainable params: 92801 (362.50 KB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+Found 5583 images belonging to 2 classes.
+Found 1394 images belonging to 2 classes.
+D:\code2018\TrainNetwork.py:137: UserWarning: `Model.fit_generator` is deprecated and will be removed in a future version. Please use `Model.fit`, which supports generators.
+  history = model.fit_generator(
+total_negative_images 4548
+total_positive_images 2429
+total_imagess 6977
+class_weight {0: 0.7670404573438874, 1: 1.4361877315767806}
+Epoch 1/15
+87/87 [==============================] - ETA: 0s - loss: 0.4213 - accuracy: 0.7991
+D:\code2018\venv\Lib\site-packages\keras\src\engine\training.py:3000: UserWarning: You are saving your model as an HDF5 file via `model.save()`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')`.
+  saving_api.save_model(
+Epoch 1: val_accuracy improved from -inf to 0.71875, saving model to best_model_weights.h5
+87/87 [==============================] - 6s 62ms/step - loss: 0.4213 - accuracy: 0.7991 - val_loss: 0.6979 - val_accuracy: 0.7188
+Epoch 2/15
+86/87 [============================>.] - ETA: 0s - loss: 0.2480 - accuracy: 0.9056
+Epoch 2: val_accuracy improved from 0.71875 to 0.74777, saving model to best_model_weights.h5
+87/87 [==============================] - 5s 53ms/step - loss: 0.2494 - accuracy: 0.9054 - val_loss: 0.6089 - val_accuracy: 0.7478
+Epoch 3/15
+87/87 [==============================] - ETA: 0s - loss: 0.2008 - accuracy: 0.9263
+Epoch 3: val_accuracy did not improve from 0.74777
+87/87 [==============================] - 5s 53ms/step - loss: 0.2008 - accuracy: 0.9263 - val_loss: 0.6792 - val_accuracy: 0.7396
+Epoch 4/15
+87/87 [==============================] - ETA: 0s - loss: 0.1634 - accuracy: 0.9404
+Epoch 4: val_accuracy improved from 0.74777 to 0.77232, saving model to best_model_weights.h5
+87/87 [==============================] - 5s 53ms/step - loss: 0.1634 - accuracy: 0.9404 - val_loss: 0.5655 - val_accuracy: 0.7723
+Epoch 5/15
+86/87 [============================>.] - ETA: 0s - loss: 0.1215 - accuracy: 0.9578
+Epoch 5: val_accuracy did not improve from 0.77232
+87/87 [==============================] - 5s 52ms/step - loss: 0.1218 - accuracy: 0.9578 - val_loss: 0.6756 - val_accuracy: 0.7374
+Epoch 6/15
+86/87 [============================>.] - ETA: 0s - loss: 0.1021 - accuracy: 0.9637
+Epoch 6: val_accuracy improved from 0.77232 to 0.87649, saving model to best_model_weights.h5
+87/87 [==============================] - 5s 53ms/step - loss: 0.1013 - accuracy: 0.9639 - val_loss: 0.3238 - val_accuracy: 0.8765
+Epoch 7/15
+86/87 [============================>.] - ETA: 0s - loss: 0.1002 - accuracy: 0.9666
+Epoch 7: val_accuracy improved from 0.87649 to 0.95089, saving model to best_model_weights.h5
+87/87 [==============================] - 5s 54ms/step - loss: 0.1008 - accuracy: 0.9666 - val_loss: 0.1454 - val_accuracy: 0.9509
+Epoch 8/15
+86/87 [============================>.] - ETA: 0s - loss: 0.0740 - accuracy: 0.9756
+Epoch 8: val_accuracy did not improve from 0.95089
+87/87 [==============================] - 5s 52ms/step - loss: 0.0742 - accuracy: 0.9754 - val_loss: 0.2643 - val_accuracy: 0.9010
+Epoch 9/15
+87/87 [==============================] - ETA: 0s - loss: 0.0645 - accuracy: 0.9790
+Epoch 9: val_accuracy did not improve from 0.95089
+87/87 [==============================] - 5s 53ms/step - loss: 0.0645 - accuracy: 0.9790 - val_loss: 0.2459 - val_accuracy: 0.9055
+Epoch 10/15
+87/87 [==============================] - ETA: 0s - loss: 0.0599 - accuracy: 0.9793
+Epoch 10: val_accuracy did not improve from 0.95089
+87/87 [==============================] - 5s 52ms/step - loss: 0.0599 - accuracy: 0.9793 - val_loss: 0.1535 - val_accuracy: 0.9382
+Epoch 11/15
+86/87 [============================>.] - ETA: 0s - loss: 0.0633 - accuracy: 0.9806
+Epoch 11: val_accuracy did not improve from 0.95089
+87/87 [==============================] - 5s 53ms/step - loss: 0.0631 - accuracy: 0.9806 - val_loss: 0.1956 - val_accuracy: 0.9219
+Epoch 12/15
+87/87 [==============================] - ETA: 0s - loss: 0.0596 - accuracy: 0.9822
+Epoch 12: val_accuracy did not improve from 0.95089
+87/87 [==============================] - 5s 53ms/step - loss: 0.0596 - accuracy: 0.9822 - val_loss: 0.1493 - val_accuracy: 0.9487
+Epoch 13/15
+86/87 [============================>.] - ETA: 0s - loss: 0.0501 - accuracy: 0.9833
+Epoch 13: val_accuracy improved from 0.95089 to 0.95685, saving model to best_model_weights.h5
+87/87 [==============================] - 5s 53ms/step - loss: 0.0499 - accuracy: 0.9833 - val_loss: 0.1316 - val_accuracy: 0.9568
+Epoch 14/15
+86/87 [============================>.] - ETA: 0s - loss: 0.0462 - accuracy: 0.9841
+Epoch 14: val_accuracy did not improve from 0.95685
+87/87 [==============================] - 5s 53ms/step - loss: 0.0461 - accuracy: 0.9841 - val_loss: 0.1228 - val_accuracy: 0.9546
+Epoch 15/15
+86/87 [============================>.] - ETA: 0s - loss: 0.0471 - accuracy: 0.9850
+Epoch 15: val_accuracy did not improve from 0.95685
+87/87 [==============================] - 5s 53ms/step - loss: 0.0470 - accuracy: 0.9850 - val_loss: 0.2471 - val_accuracy: 0.9129
+ok
